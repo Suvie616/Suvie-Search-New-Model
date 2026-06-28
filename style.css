@@ -1,0 +1,29 @@
+:root{--bg:#0f1724;--card:#0b1220;--accent:#7dd3fc;--muted:#94a3b8;--text:#e6eef6}
+*{box-sizing:border-box}
+body{font-family:Inter,Segoe UI,system-ui,Arial,sans-serif;background:linear-gradient(180deg,#071029 0%,#081229 100%);color:var(--text);margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px}
+.app{width:min(980px,96%)}
+.header{text-align:center;margin-bottom:20px}
+.header h1{margin:0;font-size:2.2rem}
+.tagline{color:var(--muted);margin:6px 0 12px}
+.search{display:inline-flex;align-items:center;width:100%;max-width:720px}
+#search-input{flex:1;padding:12px 14px;border-radius:10px 0 0 10px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:var(--text);outline:none;font-size:1rem}
+#clear-btn{padding:10px 12px;border-radius:0 10px 10px 0;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:var(--muted);cursor:pointer}
+.search button#google-btn{background:#1a73e8;color:#fff;border:none;padding:10px 12px;margin-left:6px;border-radius:8px;font-weight:600;cursor:pointer}
+.search button#google-btn:hover{background:#1666c1}
+.results{margin-top:18px;background:var(--card);padding:18px;border-radius:8px;border:1px solid rgba(255,255,255,0.03)}
+.help{color:var(--muted);margin:0}
+.none{color:#ffb4b4}
+.result-list{list-style:none;padding:0;margin:0}
+.result-item{padding:14px;border-radius:6px;margin-bottom:14px;background:transparent}
+.result-item a{color:#1a73e8;text-decoration:none}
+.result-url{color:#006621;font-size:0.9rem;margin:4px 0}
+.result-item .title{display:block;font-size:1.15rem;margin-bottom:4px}
+.snippet{color:var(--muted);margin:6px 0 0}
+.result-item mark{background:#fff59d;color:#000;padding:0 2px;border-radius:2px}
+.footer{margin-top:12px;color:var(--muted);font-size:0.85rem}
+.pagination{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:12px}
+.pagination button{background:#fff;color:#222;border:1px solid #ddd;padding:6px 10px;border-radius:4px;cursor:pointer}
+.pagination button:disabled{opacity:0.5;cursor:not-allowed}
+.page-info{color:var(--muted);margin:0 8px}
+
+@media (max-width:600px){#search-input{font-size:0.95rem}} 

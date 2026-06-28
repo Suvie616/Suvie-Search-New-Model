@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "title": "Phonk Edits Overview",
+    "url": "https://example.com/phonk-edits",
+    "content": "A short guide to creating phonk-style edits, including sample sound design tips and common effects used in phonk tracks."
+  },
+  {
+    "id": "2",
+    "title": "Tailwind Tips and Tricks",
+    "url": "https://example.com/tailwind-tips",
+    "content": "Useful Tailwind CSS utilities, responsive layouts, and quick component patterns for building fast UIs."
+  },
+  {
+    "id": "3",
+    "title": "JavaScript Array Methods",
+    "url": "https://example.com/js-arrays",
+    "content": "Examples for map, filter, reduce, find, sort and chaining array methods with practical use-cases."
+  },
+  {
+    "id": "4",
+    "title": "DOM Events Reference",
+    "url": "https://example.com/dom-events",
+    "content": "Learn about click, input, change, submit, and keyboard events, plus delegation and best practices."
+  },
+  {
+    "id": "5",
+    "title": "Building a Simple Search",
+    "url": "https://example.com/simple-search",
+    "content": "Techniques for building a client-side search index, scoring results, and rendering snippets."
+  },
+  {
+    "id": "6",
+    "title": "Suvie & Keith — Official Site",
+    "url": "https://example.com/suvie-keith",
+    "content": "Official website information and links to projects, galleries, and contact details."
+  },
+  {
+    "id": "7",
+    "title": "VFX Overlays and Shockwaves",
+    "url": "https://example.com/vfx",
+    "content": "A curated set of VFX overlays, shockwave animations, and tips for compositing in editors."
+  },
+  {
+    "id": "8",
+    "title": "SFX: Whooshes and Impacts",
+    "url": "https://example.com/sfx-whooshes",
+    "content": "Sound effects collection focusing on transitional whooshes, impacts, and ambience."
+  },
+  {
+    "id": "9",
+    "title": "Deploying Node Apps",
+    "url": "https://example.com/deploy-node",
+    "content": "Steps for deploying Node.js applications to common hosting providers and configuration tips."
+  },
+  {
+    "id": "10",
+    "title": "About Suvie Search",
+    "url": "https://example.com/about-suvie-search",
+    "content": "Suvie Search is a small demo search engine showcasing client-side indexing and simple relevance scoring."
+  }
+]

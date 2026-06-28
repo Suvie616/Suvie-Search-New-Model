@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Suvie Search</title>
+	<link rel="stylesheet" href="style.css">
+	<meta name="description" content="Suvie Search — a lightweight client-side search demo" />
+  
+</head>
+<body>
+	<main class="app">
+		<header class="header">
+			<h1>Suvie Search</h1>
+			<p class="tagline">Find pages, notes, and sample content instantly.</p>
+			<div class="search">
+				<input id="search-input" placeholder="Search Suvie... (try: phonk, tailwind, array)" autofocus>
+				<button id="google-btn" title="Search on Google">Google</button>
+				<button id="clear-btn" title="Clear">✕</button>
+			</div>
+		</header>
+
+		<section id="results" class="results">
+			<p class="help">Type to search the local index.</p>
+		</section>
+		<div id="pagination" class="pagination"></div>
+
+		<footer class="footer">
+			<small>Local demo search — merged with SerpAPI web results when available.</small>
+		</footer>
+	</main>
+
+	<script src="script.js" defer></script>
+</body>
+</html>

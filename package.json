@@ -1,0 +1,14 @@
+{
+  "name": "suvie-search",
+  "version": "1.0.0",
+  "description": "Suvie Search — static frontend with SerpAPI proxy",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.18.2",
+    "node-fetch": "^2.6.7"
+  }
+}
