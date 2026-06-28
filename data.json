@@ -1,62 +1,92 @@
 [
   {
     "id": "1",
-    "title": "Phonk Edits Overview",
-    "url": "https://example.com/phonk-edits",
-    "content": "A short guide to creating phonk-style edits, including sample sound design tips and common effects used in phonk tracks."
+    "title": "YouTube",
+    "url": "https://www.youtube.com/",
+    "content": "Video sharing platform for uploading, streaming, and discovering content."
   },
   {
     "id": "2",
-    "title": "Tailwind Tips and Tricks",
-    "url": "https://example.com/tailwind-tips",
-    "content": "Useful Tailwind CSS utilities, responsive layouts, and quick component patterns for building fast UIs."
+    "title": "Spotify",
+    "url": "https://www.spotify.com/",
+    "content": "Music streaming service with playlists, podcasts, and personalized recommendations."
   },
   {
     "id": "3",
-    "title": "JavaScript Array Methods",
-    "url": "https://example.com/js-arrays",
-    "content": "Examples for map, filter, reduce, find, sort and chaining array methods with practical use-cases."
+    "title": "Instagram",
+    "url": "https://www.instagram.com/",
+    "content": "Photo and video sharing social network with stories, reels, and messaging."
   },
   {
     "id": "4",
-    "title": "DOM Events Reference",
-    "url": "https://example.com/dom-events",
-    "content": "Learn about click, input, change, submit, and keyboard events, plus delegation and best practices."
+    "title": "Facebook",
+    "url": "https://www.facebook.com/",
+    "content": "Social networking site for connecting with friends, groups, and communities."
   },
   {
     "id": "5",
-    "title": "Building a Simple Search",
-    "url": "https://example.com/simple-search",
-    "content": "Techniques for building a client-side search index, scoring results, and rendering snippets."
+    "title": "Twitter (X)",
+    "url": "https://x.com/",
+    "content": "Microblogging platform for sharing short posts, news, and trending topics."
   },
   {
     "id": "6",
-    "title": "Suvie & Keith — Official Site",
-    "url": "https://example.com/suvie-keith",
-    "content": "Official website information and links to projects, galleries, and contact details."
+    "title": "TikTok",
+    "url": "https://www.tiktok.com/",
+    "content": "Short-form video platform with creative tools, trends, and viral challenges."
   },
   {
     "id": "7",
-    "title": "VFX Overlays and Shockwaves",
-    "url": "https://example.com/vfx",
-    "content": "A curated set of VFX overlays, shockwave animations, and tips for compositing in editors."
+    "title": "Snapchat",
+    "url": "https://www.snapchat.com/",
+    "content": "Messaging app with disappearing snaps, stories, and augmented reality filters."
   },
   {
     "id": "8",
-    "title": "SFX: Whooshes and Impacts",
-    "url": "https://example.com/sfx-whooshes",
-    "content": "Sound effects collection focusing on transitional whooshes, impacts, and ambience."
+    "title": "LinkedIn",
+    "url": "https://www.linkedin.com/",
+    "content": "Professional networking site for jobs, business connections, and industry updates."
   },
   {
     "id": "9",
-    "title": "Deploying Node Apps",
-    "url": "https://example.com/deploy-node",
-    "content": "Steps for deploying Node.js applications to common hosting providers and configuration tips."
+    "title": "Reddit",
+    "url": "https://www.reddit.com/",
+    "content": "Community-based platform with forums, discussions, and niche interest groups."
   },
   {
     "id": "10",
-    "title": "About Suvie Search",
-    "url": "https://example.com/about-suvie-search",
-    "content": "Suvie Search is a small demo search engine showcasing client-side indexing and simple relevance scoring."
+    "title": "Pinterest",
+    "url": "https://www.pinterest.com/",
+    "content": "Visual discovery engine for ideas, inspiration, and creative projects."
+  },
+  {
+    "id": "11",
+    "title": "Discord",
+    "url": "https://discord.com/",
+    "content": "Chat and community platform with servers, voice channels, and integrations."
+  },
+  {
+    "id": "12",
+    "title": "Tumblr",
+    "url": "https://www.tumblr.com/",
+    "content": "Microblogging and social networking site for creative communities."
+  },
+  {
+    "id": "13",
+    "title": "Threads",
+    "url": "https://www.threads.net/",
+    "content": "Text-based social app by Instagram for sharing updates and conversations."
+  },
+  {
+    "id": "14",
+    "title": "WhatsApp Web",
+    "url": "https://web.whatsapp.com/",
+    "content": "Messaging app for text, voice, and video communication with end-to-end encryption."
+  },
+  {
+    "id": "15",
+    "title": "Telegram",
+    "url": "https://telegram.org/",
+    "content": "Cloud-based messaging app with channels, bots, and large group support."
   }
 ]
