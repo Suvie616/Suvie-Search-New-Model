@@ -19,7 +19,15 @@ npm install
 npm start
 ```
 
-4. Open http://localhost:8000 in your browser. The frontend will call `/api/search?q=...` which proxies queries to SerpAPI and merges local results from `data.json`.
+4. Open http://localhost:8000 in your browser. The frontend will call `/api/search?q=...`.
+
+Google Custom Search setup:
+
+- Create a Programmable Search Engine at https://cse.google.com/
+- Set it to search the entire web or the sites you want.
+- Copy the Search Engine ID (`GOOGLE_CX`).
+- Put both `GOOGLE_API_KEY` and `GOOGLE_CX` in `.env`.
+- Restart the server.
 
 Pagination: the server supports `start` and `num` parameters. The frontend provides simple Previous/Next controls when web results are available.
 
@@ -42,8 +50,10 @@ node index_local.js "C:/Users/suuwe/OneDrive/Desktop/CODES"
 Crawl a site (small test):
 
 ```bash
-node crawler.js https://example.com
+C:/Users/suuwe/AppData/Local/Python/pythoncore-3.14-64/python.exe run_crawler.py https://example.com 50
 ```
+
+Then the crawler output is loaded automatically from `crawl_output.json` by the server.
 
 Switch to Google Custom Search by adding credentials to `.env` then restart the server.
 

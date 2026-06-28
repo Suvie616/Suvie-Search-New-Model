@@ -1,29 +1,33 @@
-:root{--bg:#0f1724;--card:#0b1220;--accent:#7dd3fc;--muted:#94a3b8;--text:#e6eef6}
+body{font-family:Inter,Segoe UI,system-ui,Arial,sans-serif;background:#fff;color:#202124;margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px}
 *{box-sizing:border-box}
-body{font-family:Inter,Segoe UI,system-ui,Arial,sans-serif;background:linear-gradient(180deg,#071029 0%,#081229 100%);color:var(--text);margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px}
-.app{width:min(980px,96%)}
-.header{text-align:center;margin-bottom:20px}
-.header h1{margin:0;font-size:2.2rem}
-.tagline{color:var(--muted);margin:6px 0 12px}
-.search{display:inline-flex;align-items:center;width:100%;max-width:720px}
-#search-input{flex:1;padding:12px 14px;border-radius:10px 0 0 10px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:var(--text);outline:none;font-size:1rem}
-#clear-btn{padding:10px 12px;border-radius:0 10px 10px 0;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:var(--muted);cursor:pointer}
-.search button#google-btn{background:#1a73e8;color:#fff;border:none;padding:10px 12px;margin-left:6px;border-radius:8px;font-weight:600;cursor:pointer}
-.search button#google-btn:hover{background:#1666c1}
-.results{margin-top:18px;background:var(--card);padding:18px;border-radius:8px;border:1px solid rgba(255,255,255,0.03)}
-.help{color:var(--muted);margin:0}
-.none{color:#ffb4b4}
+.app{width:min(980px,96%);text-align:center}
+.header{margin-bottom:24px}
+.logo{font-size:3rem;margin:0;font-weight:400;color:#202124;letter-spacing:-0.03em}
+.tagline{color:#5f6368;margin:12px 0 24px;font-size:1.05rem}
+.search-box{display:flex;flex-direction:column;align-items:center;gap:14px}
+#search-input{width:100%;max-width:640px;padding:16px 18px;border-radius:24px;border:1px solid #dfe1e5;box-shadow:0 1px 6px rgba(32,33,36,.28);font-size:1.05rem;outline:none}
+#search-input:focus{border-color:#4285f4;box-shadow:0 1px 6px rgba(66,133,244,.3)}
+.search-buttons{display:inline-flex;gap:10px}
+#clear-btn,#google-btn{border:none;border-radius:4px;padding:10px 18px;font-size:.95rem;cursor:pointer}
+#clear-btn{background:#f8f9fa;color:#3c4043;box-shadow:0 1px 2px rgba(60,64,67,.3)}
+#google-btn{background:#1a73e8;color:#fff;box-shadow:0 1px 2px rgba(26,115,232,.3)}
+#google-btn:hover{background:#1666c1}
+.results{margin-top:24px;text-align:left}
+.help{color:#5f6368;margin:0}
+.none{color:#d93025}
 .result-list{list-style:none;padding:0;margin:0}
-.result-item{padding:14px;border-radius:6px;margin-bottom:14px;background:transparent}
-.result-item a{color:#1a73e8;text-decoration:none}
-.result-url{color:#006621;font-size:0.9rem;margin:4px 0}
-.result-item .title{display:block;font-size:1.15rem;margin-bottom:4px}
-.snippet{color:var(--muted);margin:6px 0 0}
+.result-item{padding:18px 0;border-bottom:1px solid #dadce0}
+.result-item:last-child{border-bottom:none}
+.result-item a{color:#1a0dab;text-decoration:none;font-size:1.25rem}
+.result-item a:hover{text-decoration:underline}
+.result-url{color:#006621;font-size:.95rem;margin:6px 0}
+.result-item .title{display:block}
+.snippet{color:#4d5156;margin:8px 0 0;line-height:1.5}
 .result-item mark{background:#fff59d;color:#000;padding:0 2px;border-radius:2px}
-.footer{margin-top:12px;color:var(--muted);font-size:0.85rem}
-.pagination{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:12px}
-.pagination button{background:#fff;color:#222;border:1px solid #ddd;padding:6px 10px;border-radius:4px;cursor:pointer}
-.pagination button:disabled{opacity:0.5;cursor:not-allowed}
-.page-info{color:var(--muted);margin:0 8px}
-
-@media (max-width:600px){#search-input{font-size:0.95rem}} 
+.source-label{font-size:.85rem;color:#5f6368;margin-top:6px}
+.footer{margin-top:24px;color:#5f6368;font-size:.9rem}
+.pagination{display:flex;gap:10px;align-items:center;justify-content:center;margin-top:20px}
+.pagination button{background:#f8f9fa;color:#3c4043;border:1px solid #dadce0;padding:8px 14px;border-radius:4px;cursor:pointer}
+.pagination button:disabled{opacity:.5;cursor:not-allowed}
+.page-info{color:#5f6368;margin:0 12px}
+@media (max-width:680px){#search-input{max-width:100%}} 

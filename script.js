@@ -2,6 +2,7 @@
 let INDEX = [];
 let CURRENT_START = 0;
 let CURRENT_NUM = 10;
+let CURRENT_PROVIDER = '';
 
 function loadIndex() {
 	return fetch('data.json')
@@ -37,9 +38,15 @@ function renderResults(results, query, meta) {
 		return;
 	}
 	if (!results || results.length === 0) {
-		resultsEl.innerHTML = `<p class="none">No results for "${escapeHtml(query)}"</p>`;
+		const info = document.getElementById('search-info');
+		if (info) info.textContent = `No results for "${query}"`;
+		resultsEl.innerHTML = `<p class="none">No results for "${escapeHtml(query)}"</p><p class="hint">If your results don't show up, try Google search.</p>`;
 		renderPagination(0, 0);
 		return;
+	}
+	const info = document.getElementById('search-info');
+	if (info) {
+		info.textContent = `${results.length} results for "${query}"`;
 	}
 	const ul = document.createElement('ul');
 	ul.className = 'result-list';
@@ -61,9 +68,14 @@ function renderResults(results, query, meta) {
 		snippet.className = 'snippet';
 		snippet.innerHTML = highlight(escapeHtml(r.snippet || r.content || ''), qTokens);
 
+		const source = document.createElement('div');
+		source.className = 'source-label';
+		source.textContent = r.source ? `Source: ${r.source}` : '';
+
 		li.appendChild(a);
 		li.appendChild(urlLine);
 		li.appendChild(snippet);
+		li.appendChild(source);
 		ul.appendChild(li);
 	}
 	resultsEl.appendChild(ul);
@@ -94,15 +106,20 @@ function highlight(text, qTokens) {
 	return text;
 }
 
-function doSearch(query) {
+function doSearch(query, provider = '') {
 	const q = (query || '').trim();
 	const qTokens = tokenize(q);
 	if (qTokens.length === 0) {
 		renderResults([], '');
 		return;
 	}
-	// Try server-side (SerpAPI) first; if unavailable, fall back to local search
-	fetch(`/api/search?q=${encodeURIComponent(q)}&start=${encodeURIComponent(CURRENT_START)}&num=${encodeURIComponent(CURRENT_NUM)}`)
+	// Try server-side (Google or SerpAPI) first; if unavailable, fall back to local search
+	const providerParam = provider || CURRENT_PROVIDER || '';
+	let url = `/api/search?q=${encodeURIComponent(q)}&start=${encodeURIComponent(CURRENT_START)}&num=${encodeURIComponent(CURRENT_NUM)}`;
+	if (providerParam) {
+		url += `&provider=${encodeURIComponent(providerParam)}`;
+	}
+	fetch(url)
 		.then(r => {
 			if (!r.ok) throw new Error('server');
 			return r.json();
@@ -130,6 +147,7 @@ function hookUI() {
 	let timeout = null;
 	input.addEventListener('input', () => {
 		clearTimeout(timeout);
+		CURRENT_PROVIDER = '';
 		timeout = setTimeout(() => { CURRENT_START = 0; doSearch(input.value); }, 180);
 	});
 	input.addEventListener('keydown', (e) => {
@@ -139,9 +157,8 @@ function hookUI() {
 	clearBtn.addEventListener('click', () => { input.value=''; input.focus(); doSearch(''); });
 	if (googleBtn) {
 		googleBtn.addEventListener('click', () => {
-			const q = encodeURIComponent(input.value || '');
-			const url = `https://www.google.com/search?q=${q}`;
-			window.open(url, '_blank');
+			CURRENT_PROVIDER = 'google';
+			doSearch(input.value, 'google');
 		});
 	}
 }

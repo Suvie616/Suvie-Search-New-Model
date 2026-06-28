@@ -11,22 +11,25 @@
 <body>
 	<main class="app">
 		<header class="header">
-			<h1>Suvie Search</h1>
-			<p class="tagline">Find pages, notes, and sample content instantly.</p>
-			<div class="search">
-				<input id="search-input" placeholder="Search Suvie... (try: phonk, tailwind, array)" autofocus>
-				<button id="google-btn" title="Search on Google">Google</button>
-				<button id="clear-btn" title="Clear">✕</button>
+			<h1 class="logo">Suvie Search</h1>
+			<p class="tagline">Search the web, local pages, and crawled content.</p>
+			<div class="search-box">
+				<input id="search-input" placeholder="Search the web..." autofocus>
+				<div class="search-buttons">
+					<button id="google-btn" title="Search on Google">Search Google</button>
+					<button id="clear-btn" title="Clear">Clear</button>
+				</div>
 			</div>
 		</header>
 
+		<div id="search-info" class="search-info"></div>
 		<section id="results" class="results">
-			<p class="help">Type to search the local index.</p>
+			<p class="help">Type to search the web and local data.</p>
 		</section>
 		<div id="pagination" class="pagination"></div>
 
 		<footer class="footer">
-			<small>Local demo search — merged with SerpAPI web results when available.</small>
+		
 		</footer>
 	</main>
 
