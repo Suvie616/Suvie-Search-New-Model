@@ -2,7 +2,6 @@
 let INDEX = [];
 let CURRENT_START = 0;
 let CURRENT_NUM = 10;
-let CURRENT_PROVIDER = '';
 
 function loadIndex() {
 	return fetch('data.json')
@@ -40,7 +39,7 @@ function renderResults(results, query, meta) {
 	if (!results || results.length === 0) {
 		const info = document.getElementById('search-info');
 		if (info) info.textContent = `No results for "${query}"`;
-		resultsEl.innerHTML = `<p class="none">No results for "${escapeHtml(query)}"</p><p class="hint">If your results don't show up, try Google search.</p>`;
+		resultsEl.innerHTML = `<p class="none">No results for "${escapeHtml(query)}"</p>`;
 		renderPagination(0, 0);
 		return;
 	}
@@ -106,20 +105,15 @@ function highlight(text, qTokens) {
 	return text;
 }
 
-function doSearch(query, provider = '') {
+function doSearch(query) {
 	const q = (query || '').trim();
 	const qTokens = tokenize(q);
 	if (qTokens.length === 0) {
 		renderResults([], '');
 		return;
 	}
-	// Try server-side (Google or SerpAPI) first; if unavailable, fall back to local search
-	const providerParam = provider || CURRENT_PROVIDER || '';
-	let url = `/api/search?q=${encodeURIComponent(q)}&start=${encodeURIComponent(CURRENT_START)}&num=${encodeURIComponent(CURRENT_NUM)}`;
-	if (providerParam) {
-		url += `&provider=${encodeURIComponent(providerParam)}`;
-	}
-	fetch(url)
+	// Try server-side (SerpAPI) first; if unavailable, fall back to local search
+	fetch(`/api/search?q=${encodeURIComponent(q)}&start=${encodeURIComponent(CURRENT_START)}&num=${encodeURIComponent(CURRENT_NUM)}`)
 		.then(r => {
 			if (!r.ok) throw new Error('server');
 			return r.json();
@@ -147,7 +141,6 @@ function hookUI() {
 	let timeout = null;
 	input.addEventListener('input', () => {
 		clearTimeout(timeout);
-		CURRENT_PROVIDER = '';
 		timeout = setTimeout(() => { CURRENT_START = 0; doSearch(input.value); }, 180);
 	});
 	input.addEventListener('keydown', (e) => {
@@ -157,8 +150,9 @@ function hookUI() {
 	clearBtn.addEventListener('click', () => { input.value=''; input.focus(); doSearch(''); });
 	if (googleBtn) {
 		googleBtn.addEventListener('click', () => {
-			CURRENT_PROVIDER = 'google';
-			doSearch(input.value, 'google');
+			const q = encodeURIComponent(input.value || '');
+			const url = `https://www.google.com/search?q=${q}`;
+			window.open(url, '_blank');
 		});
 	}
 }
