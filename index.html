@@ -20,6 +20,13 @@
 					<button id="clear-btn" title="Clear">Clear</button>
 				</div>
 			</div>
+			<link rel="stylesheet" href="https://unpkg.com/meilisearch-docsearch@latest/dist/index.css" />
+  <style type="text/css">
+  body {
+    font-family: circular;
+  }
+  </style>
+
 		</header>
 
 		<div id="search-info" class="search-info"></div>
@@ -32,7 +39,17 @@
 		
 		</footer>
 	</main>
-
+<div id="docsearch"></div>
+<script src="https://unpkg.com/meilisearch-docsearch@latest/dist/index.global.js"></script>
+<script>
+  const { docsearch } = window.__docsearch_meilisearch__;
+  docsearch({
+    container: "#docsearch",
+    host: "https://ms-2abdac657739-50716.sgp.meilisearch.io", // host
+    apiKey: "50d3872e3ba5c09f77d5d0ad0555d4219bf2f0ff39406bc3284de7b274307a7c", // search api key
+    indexUid: "suvie_search", // indexUid
+  });
+</script>
 	<script src="script.js" defer></script>
 </body>
 </html>

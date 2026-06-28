@@ -1,4 +1,18 @@
-score Python
+from whoosh.qparser import QueryParser
+
+# Open index
+qp = QueryParser("content", schema=ix.schema)
+
+with open("search_queries.txt") as f:
+    queries = f.readlines()
+
+with ix.searcher() as searcher:
+    for q in queries[:20]:  # test with first 20
+        query = qp.parse(q.strip())
+        results = searcher.search(query)
+        print(f"Query: {q.strip()}")
+        for r in results:
+            print(f"  -> {r['title']} ({r['url']})")score Python
 best movies Instagram
 street food Windows 10
 celebrity news YouTube
